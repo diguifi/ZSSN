@@ -4,6 +4,7 @@ class CreateSurvivors < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :age
       t.integer :gender
+      t.references :location, foreign_key: true
 
       t.timestamps
     end
