@@ -22,7 +22,7 @@ module Api
 
             def update
                 survivor = Survivor.find(params[:id])
-                if survivor.update_attributes(survivor_params)
+                if survivor.update_attributes(update_params)
                     render json: {status: 'SUCCESS', data: survivor},status: :ok
                 else
                     render json: {status: 'ERROR', data: survivor.errors},status: :unprocessable_entity
@@ -36,9 +36,13 @@ module Api
             end
 
             def survivor_params
-                params.permit(:name, :age, :gender)
+                params.permit(:name, :age, :gender, :latitude, :longitude,
+                    :inventory_attributes => [:survivor_id, :water, :food, :medication, :ammo])
             end
 
+            def update_params
+                params.require(:survivor).permit(:latitude, :longitude)
+            end
         end
     end
 end

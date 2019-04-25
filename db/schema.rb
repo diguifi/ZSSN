@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_24_215310) do
+ActiveRecord::Schema.define(version: 2019_04_25_013631) do
+
+  create_table "inventories", force: :cascade do |t|
+    t.integer "water"
+    t.integer "food"
+    t.integer "medication"
+    t.integer "ammo"
+    t.integer "survivor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["survivor_id"], name: "index_inventories_on_survivor_id"
+  end
 
   create_table "survivors", force: :cascade do |t|
     t.string "name"
