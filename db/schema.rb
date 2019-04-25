@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_25_013631) do
+ActiveRecord::Schema.define(version: 2019_04_25_223834) do
+
+  create_table "infection_reports", force: :cascade do |t|
+    t.integer "survivor_reported_id"
+    t.integer "survivor_reporter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["survivor_reported_id"], name: "index_infection_reports_on_survivor_reported_id"
+    t.index ["survivor_reporter_id"], name: "index_infection_reports_on_survivor_reporter_id"
+  end
 
   create_table "inventories", force: :cascade do |t|
     t.integer "water"
@@ -29,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_04_25_013631) do
     t.integer "gender"
     t.string "latitude"
     t.string "longitude"
+    t.boolean "infected", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
