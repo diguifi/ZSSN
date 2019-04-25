@@ -4,10 +4,12 @@ one:
   name: MyString
   age: 1
   gender: 1
-  location: one
+  latitude: MyString
+  longitude: MyString
 
 two:
   name: MyString
   age: 1
   gender: 1
-  location: two
+  latitude: MyString
+  longitude: MyString

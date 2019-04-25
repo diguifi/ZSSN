@@ -12,21 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2019_04_24_215310) do
 
-  create_table "locations", force: :cascade do |t|
-    t.string "latitude"
-    t.string "longitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "survivors", force: :cascade do |t|
     t.string "name"
     t.integer "age"
     t.integer "gender"
-    t.integer "location_id"
+    t.string "latitude"
+    t.string "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["location_id"], name: "index_survivors_on_location_id"
   end
 
 end
