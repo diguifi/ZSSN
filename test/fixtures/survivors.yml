@@ -1,15 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  age: 1
-  gender: 1
-  latitude: MyString
-  longitude: MyString
-
-two:
-  name: MyString
-  age: 1
-  gender: 1
-  latitude: MyString
-  longitude: MyString
+  name: "Juao"
+  age: 15
+  gender: 0
+  latitude: "10.000"
+  longitude: "50.000"

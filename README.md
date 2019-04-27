@@ -9,8 +9,13 @@ Zombie Survival Social Network - The mighty test
 - After every dependency is installed type `rails db:migrate`
 - Next give the database a simple seed, if you want, by running `rails db:seed`
 
+## Run
 Now you can run the server by typing: `rails s`
 The default port is _3000_, you can check if it worked by accessing _"http://localhost:3000"_
+
+## Test
+First create a migration for the tests by running `rails db:migrate RAILS_ENV=test`
+To run automated tests, execute `rails test`
 
 ## Usage
 ### Survivors
@@ -36,7 +41,7 @@ The default port is _3000_, you can check if it worked by accessing _"http://loc
 |----------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|
 | **PUT** | /api/v1/trade | `{`<br>`"survivor_one_items":`<br>`{`<br>`"survivor_id":3,`<br>`"water":0,`<br>`"food":0,`<br>`"medication":1,`<br>`"ammo":0`<br>`},`<br>`"survivor_two_items":`<br>`{`<br>`"survivor_id":4,`<br>`"water":0,`<br>`"food":0,`<br>`"medication":0,`<br>`"ammo":2`<br>`}`<br>`}` | Trade items between survivors |
 
-### General Reports (Work In Progress)
+### General Reports
 | Verb    | Endpoint                      | Body | Result                                          |
 |---------|-------------------------------|------|-------------------------------------------------|
 | **GET** | /api/v1/reports/infecteds     | -    | Returns percentage of infected survivors        |
@@ -44,5 +49,3 @@ The default port is _3000_, you can check if it worked by accessing _"http://loc
 | **GET** | /api/v1/reports/average_items | -    | Returns average amount of items with survivors |
 | **GET** | /api/v1/reports/points_lost   | -    | Returns total points lost because of infections |
 
-## Todo
-- Automated tests
