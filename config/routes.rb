@@ -8,6 +8,11 @@ Rails.application.routes.draw do
       patch 'trade', to: 'inventory#trade'
       
       resources :infection_reports
+
+      get 'reports/infecteds'
+      get 'reports/non_infecteds'
+      get 'reports/average_items'
+      get 'reports/points_lost'
     end
   end
 end
