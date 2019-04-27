@@ -37,8 +37,12 @@ The default port is _3000_, you can check if it worked by accessing _"http://loc
 | **PUT** | /api/v1/trade | `{`<br>`"survivor_one_items":`<br>`{`<br>`"survivor_id":3,`<br>`"water":0,`<br>`"food":0,`<br>`"medication":1,`<br>`"ammo":0`<br>`},`<br>`"survivor_two_items":`<br>`{`<br>`"survivor_id":4,`<br>`"water":0,`<br>`"food":0,`<br>`"medication":0,`<br>`"ammo":2`<br>`}`<br>`}` | Trade items between survivors |
 
 ### General Reports (Work In Progress)
---
+| Verb    | Endpoint                      | Body | Result                                          |
+|---------|-------------------------------|------|-------------------------------------------------|
+| **GET** | /api/v1/reports/infecteds     | -    | Returns percentage of infected survivors        |
+| **GET** | /api/v1/reports/non_infecteds | -    | Returns percentage of non infected survivors    |
+| **GET** | /api/v1/reports/average_items | -    | Returns average amount of items with survivors |
+| **GET** | /api/v1/reports/points_lost   | -    | Returns total points lost because of infections |
 
 ## Todo
-- General reports
 - Automated tests
